@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Portofolio resmi Dhini Akhiriani - Penulis, Penyunting Naskah, dan Mahasiswi Sastra.">
+    <meta property="og:title" content="Dhini Akhiriani | Professional Portfolio">
+    <meta property="og:description" content="Lihat karya, publikasi jurnal, dan rekam jejak prestasi Dhini Akhiriani.">
+    <meta property="og:image" content="assets/profile.JPG">
+    
+    <title>Dhini Akhiriani | Portofolio Profesional</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="intro-screen">
+        <div class="intro-content">
+            <h1 id="intro-text">DHINI AKHIRIANI.</h1>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">DHINI.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center"> <li class="nav-item"><a class="nav-link" href="#hero">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Pengalaman</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Pendidikan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#works">Karya</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#achievements">Prestasi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">Sertifikat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                    
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="theme-toggle" class="btn btn-outline-primary rounded-circle p-2 d-flex justify-content-center align-items-center" style="width: 40px; height: 40px;" title="Ubah Mode Tampilan">
+                            <i class="fas fa-moon fs-5"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="position-relative overflow-hidden">
+        
+        <div class="hero-shape shape-1"></div>
+        <div class="hero-shape shape-2"></div>
+        <div class="hero-shape shape-3"></div>
+
+        <div class="container text-center tilt-container position-relative z-1" data-tilt>
+            <img id="render-photo" src="" alt="Profile Dhini" class="profile-img mb-4 shadow-lg">
+            <h1 id="render-name" class="display-3 fw-bold color-primary"></h1>
+            <h4 id="render-role" class="text-secondary mb-4"></h4>
+            <p id="render-about" class="lead mx-auto text-muted" style="max-width: 750px;"></p>
+            <div class="mt-4">
+                <a id="render-cv" href="#" target="_blank" class="btn btn-outline-dark fw-bold px-4 py-2 rounded-pill shadow-sm transition-all hover-lift">
+                    <i class="fas fa-file-pdf me-2 text-danger"></i> Unduh CV Profesional
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="experience" class="py-4">
+            <div class="container">
+                <div class="section-header d-flex justify-content-between align-items-center bg-white p-3 rounded shadow-sm border" data-bs-toggle="collapse" data-bs-target="#collapseExp" style="cursor: pointer;">
+                    <h3 class="section-title mb-0 fs-5">Riwayat Pekerjaan & Organisasi</h3>
+                    <div class="btn-toggle text-primary"><i class="fas fa-chevron-down fs-4"></i></div>
+                </div>
+                <div class="collapse" id="collapseExp">
+                    <div class="row g-4 mt-2" id="render-experience"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-4 bg-soft">
+            <div class="container">
+                <div class="section-header d-flex justify-content-between align-items-center bg-white p-3 rounded shadow-sm border" data-bs-toggle="collapse" data-bs-target="#collapseEdu" style="cursor: pointer;">
+                    <h3 class="section-title mb-0 fs-5">Riwayat Pendidikan</h3>
+                    <div class="btn-toggle text-primary"><i class="fas fa-chevron-down fs-4"></i></div>
+                </div>
+                <div class="collapse" id="collapseEdu">
+                    <div class="row justify-content-center g-4 mt-2" id="render-education"></div>
+                </div>
+            </section>
+
+        <section id="works" class="py-4">
+            <div class="container">
+                <div class="section-header d-flex justify-content-between align-items-center bg-white p-3 rounded shadow-sm border" data-bs-toggle="collapse" data-bs-target="#collapseWorks" style="cursor: pointer;">
+                    <h3 class="section-title mb-0 fs-5">Galeri Karya & Publikasi</h3>
+                    <div class="btn-toggle text-primary"><i class="fas fa-chevron-down fs-4"></i></div>
+                </div>
+                <div class="collapse" id="collapseWorks">
+                    <div class="row g-4 mt-2" id="render-works"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="py-4 bg-soft">
+            <div class="container">
+                <div class="section-header d-flex justify-content-between align-items-center bg-white p-3 rounded shadow-sm border" data-bs-toggle="collapse" data-bs-target="#collapseAch" style="cursor: pointer;">
+                    <h3 class="section-title mb-0 fs-5">Dokumentasi & Prestasi</h3>
+                    <div class="btn-toggle text-primary"><i class="fas fa-chevron-down fs-4"></i></div>
+                </div>
+                <div class="collapse" id="collapseAch">
+                    <div class="row g-4 mt-2" id="render-achievements"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="py-4">
+            <div class="container">
+                <div class="section-header d-flex justify-content-between align-items-center bg-white p-3 rounded shadow-sm border" data-bs-toggle="collapse" data-bs-target="#collapseCert" style="cursor: pointer;">
+                    <h3 class="section-title mb-0 fs-5">Sertifikat Profesional</h3>
+                    <div class="btn-toggle text-primary"><i class="fas fa-chevron-down fs-4"></i></div>
+                </div>
+                <div class="collapse" id="collapseCert">
+                    <div class="row g-4 mt-2" id="render-certificates"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="contact" class="py-5 bg-soft">
+        <div class="container">
+            <h2 class="section-title mb-5 text-center d-block mx-auto">Hubungi Saya</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-4">
+                    <div class="glass-card p-4 border-0 bg-white shadow-sm">
+                        <form id="contact-form">
+                            <input type="hidden" name="access_key" value="e1297d49-4624-4bb2-a921-0d7983cf8df7">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Nama Lengkap</label>
+                                <input type="text" name="nama" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Alamat Surel (Email)</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Pesan Anda</label>
+                                <textarea name="pesan" class="form-control" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100 py-3 fw-bold">Kirim Pesan</button>
+                            <p id="form-result" class="mt-3 text-center fw-bold" style="display: none;"></p>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="social-grid d-flex flex-wrap justify-content-center gap-4" id="render-socials"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center bg-dark text-white">
+        <small>&copy; 2026 Dhini Akhiriani. All Rights Reserved.</small>
+    </footer>
+
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" id="modalDialog">
+            <div class="modal-content border-0 glass-card bg-white shadow-lg overflow-hidden">
+                <div class="modal-header border-0 bg-soft px-4 py-3" id="modalHeader">
+                    <h5 class="modal-title fw-bold" id="modalTitle">Detail</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0" id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

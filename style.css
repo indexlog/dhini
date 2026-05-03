@@ -1,0 +1,261 @@
+/* ==========================================
+   1. SISTEM TEMA: LIGHT & DARK MODE
+========================================== */
+
+:root {
+    /* Palet Light Mode */
+    --bg-main: #f8fafc;        /* Latar belakang utama */
+    --bg-card: #ffffff;        /* Latar kartu (putih) */
+    --bg-soft: #f1f5f9;        /* Latar aksen (abu-abu sangat muda) */
+    --text-main: #334155;      /* Teks paragraf (abu-abu gelap) */
+    --text-heading: #0f172a;   /* Teks judul (hitam pekat) */
+    --text-muted: #64748b;     /* Teks redup */
+    --accent: #2563eb;         /* Warna utama (Biru Profesional) */
+    --border-color: #e2e8f0;   /* Garis batas */
+    
+    /* Grid Pattern (Garis Kotak) */
+    --grid-line: rgba(15, 23, 42, 0.05); 
+    
+    /* Glass Effect */
+    --glass-nav: rgba(255, 255, 255, 0.85);
+    
+    /* Aurora Blobs */
+    --blob-1: #bae6fd;
+    --blob-2: #ddd6fe;
+    --blob-3: #fbcfe8;
+}
+
+[data-theme="dark"] {
+    /* Palet Dark Mode */
+    --bg-main: #0f172a;        /* Latar belakang utama (Navy gelap) */
+    --bg-card: #1e293b;        /* Latar kartu (Slate gelap) */
+    --bg-soft: #0b1120;        /* Latar aksen (Navy sangat gelap) */
+    --text-main: #cbd5e1;      /* Teks paragraf (Abu-abu terang) */
+    --text-heading: #f8fafc;   /* Teks judul (Putih terang) */
+    --text-muted: #94a3b8;     /* Teks redup */
+    --accent: #38bdf8;         /* Warna utama (Biru Neon Terang) */
+    --border-color: #334155;   /* Garis batas gelap */
+    
+    /* Grid Pattern (Garis Kotak) */
+    --grid-line: rgba(255, 255, 255, 0.05);
+    
+    /* Glass Effect */
+    --glass-nav: rgba(15, 23, 42, 0.85);
+    
+    /* Aurora Blobs (Warna lebih pekat agar menyala di gelap) */
+    --blob-1: #0284c7;
+    --blob-2: #7c3aed;
+    --blob-3: #db2777;
+}
+
+/* ==========================================
+   2. FONDASI UTAMA & OVERRIDE BOOTSTRAP
+========================================== */
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Menjinakkan Bootstrap: Paksa class bawaan mengikuti tema dinamis */
+.text-dark { color: var(--text-heading) !important; }
+.text-muted { color: var(--text-muted) !important; }
+.text-primary { color: var(--accent) !important; }
+.bg-white { background-color: var(--bg-card) !important; }
+.bg-soft { background-color: var(--bg-soft) !important; }
+.border { border-color: var(--border-color) !important; }
+.border-bottom { border-color: var(--border-color) !important; }
+.border-start { border-color: var(--accent) !important; }
+
+/* Menyesuaikan warna tombol di Dark Mode */
+.btn-dark { background-color: var(--accent) !important; border-color: var(--accent) !important; color: #fff !important; }
+.btn-outline-dark { color: var(--text-heading) !important; border-color: var(--text-heading) !important; }
+.btn-outline-dark:hover { background-color: var(--text-heading) !important; color: var(--bg-main) !important; }
+
+/* Micro-Interactions */
+::selection { background: var(--accent); color: white; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 10px; }
+
+/* ==========================================
+   3. DESAIN LATAR BELAKANG (HERO & ISI)
+========================================== */
+
+/* A. Latar Belakang Halaman Isi (Modern Blueprint Grid) */
+main, #contact, .bg-soft {
+    position: relative;
+    /* Membuat pola garis kotak-kotak yang jelas namun tidak mengganggu */
+    background-image: 
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* B. Latar Belakang Halaman Depan (Aurora Blobs) */
+#hero {
+    position: relative;
+    background: transparent;
+    height: 100vh; /* Mengembalikan tinggi layar penuh */
+    display: flex; /* Mengembalikan fungsi ke tengah */
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; /* Memberi jarak aman agar tidak tertabrak Navbar di atas */
+}
+.hero-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px); 
+    opacity: 0.6;
+    animation: floatBlob 12s infinite alternate ease-in-out;
+    z-index: 0; 
+    pointer-events: none; 
+}
+.shape-1 { width: 400px; height: 400px; background: var(--blob-1); top: -10%; left: -10%; animation-delay: 0s; }
+.shape-2 { width: 500px; height: 500px; background: var(--blob-2); bottom: -20%; right: -10%; animation-delay: -3s; }
+.shape-3 { width: 350px; height: 350px; background: var(--blob-3); top: 40%; left: 35%; animation-delay: -6s; }
+
+@keyframes floatBlob {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(40px, 50px) scale(1.1); }
+}
+
+/* ==========================================
+   4. UI ELEMENTS & KARTU (GLASSMORPHISM)
+========================================== */
+
+/* Navbar */
+.glass-nav { 
+    background: var(--glass-nav); 
+    backdrop-filter: blur(12px); 
+    border-bottom: 1px solid var(--border-color); 
+    transition: background-color 0.5s ease;
+}
+.nav-link { color: var(--text-heading); font-weight: 500; transition: 0.3s; }
+.nav-link:hover { color: var(--accent); }
+
+/* Foto Profil Utama */
+.profile-img { 
+    width: 200px; height: 200px; 
+    border-radius: 50%; object-fit: cover; 
+    border: 8px solid var(--bg-card); 
+    cursor: pointer; position: relative; z-index: 2;
+}
+
+/* Kartu Konten */
+.glass-card { 
+    background: var(--bg-card); 
+    border: 1px solid var(--border-color); 
+    border-radius: 20px; 
+    transition: all 0.4s ease; cursor: pointer; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.glass-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    border-color: var(--accent); 
+}
+
+/* Accordion Custom */
+.section-header { 
+    transition: 0.3s; 
+    background-color: var(--bg-card) !important; 
+    border-color: var(--border-color) !important; 
+}
+.section-header:hover { transform: translateY(-2px); }
+.btn-toggle { transition: transform 0.4s ease; color: var(--text-heading) !important; }
+.section-header[aria-expanded="true"] .btn-toggle { transform: rotate(180deg); color: var(--accent) !important; }
+
+/* Lightbox & Modal */
+.lightbox-img { width: 100%; max-height: 90vh; object-fit: contain; background: #000; display: block; }
+.btn-close-lightbox { position: absolute; top: 15px; right: 15px; background: white; border-radius: 50%; padding: 10px; z-index: 10; opacity: 0.8;}
+.btn-close-lightbox:hover { opacity: 1; }
+
+/* Form Elements */
+.form-control { 
+    background-color: var(--bg-main); 
+    border: 1px solid var(--border-color); 
+    color: var(--text-heading); 
+}
+.form-control:focus { 
+    background-color: var(--bg-main); 
+    border-color: var(--accent); 
+    color: var(--text-heading); 
+    box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+}
+
+/* Social Icons */
+.social-item { font-size: 2.5rem; color: var(--text-muted); transition: 0.3s; }
+.social-item:hover { color: var(--accent); transform: scale(1.2) translateY(-5px); }
+
+/* ==========================================
+   5. INTRO SCREEN ANIMATION
+========================================== */
+#intro-screen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: var(--bg-card); z-index: 9999;
+    display: flex; justify-content: center; align-items: center;
+}
+.intro-content { display: inline-flex; flex-direction: column; align-items: stretch; }
+#intro-text { font-weight: 900; letter-spacing: 5px; color: var(--text-heading); margin-bottom: 15px; white-space: nowrap; }
+.loading-bar-container { width: 100%; height: 3px; background: var(--border-color); border-radius: 10px; overflow: hidden; }
+.loading-bar { width: 0%; height: 100%; background: var(--accent); animation: load 2s ease forwards; }
+@keyframes load { to { width: 100%; } }
+/* ==========================================
+   6. PERBAIKAN KONTRAS NAVBAR DI DARK MODE
+========================================== */
+
+/* Memastikan tulisan logo/brand "DHINI." selalu menyesuaikan tema (Putih di Dark Mode, Hitam di Light Mode) */
+.navbar-brand {
+    color: var(--text-heading) !important;
+    transition: color 0.5s ease;
+}
+
+/* Memperbaiki Ikon Hamburger (Dropdown) di Mode Gelap */
+[data-theme="dark"] .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3); /* Membuat kotak garisnya menjadi putih transparan */
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+    /* Trik cerdas: Membalikkan (invert) ikon SVG hitam bawaan menjadi putih bersinar */
+    filter: invert(1) brightness(2); 
+}
+/* ==========================================
+   7. ANIMASI ACCORDION & KONTEN SINKRON
+========================================== */
+
+/* A. Kecepatan panel (Accordion) diatur menjadi 0.4 detik */
+.collapse {
+    overflow: hidden; 
+}
+
+.collapsing {
+    transition: height 0.4s ease-out !important;
+}
+
+/* B. Animasi isi di dalamnya (Kartu & Gambar) */
+
+/* 1. Posisi saat panel tertutup */
+.collapse .glass-card,
+.collapsing .glass-card {
+    opacity: 0;
+    transform: translateY(15px); /* Jarak turun diperkecil agar lebih responsif */
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out; /* Menghilang super cepat saat ditutup */
+}
+
+/* 2. Posisi saat panel terbuka sempurna */
+.collapse.show .glass-card {
+    opacity: 1;
+    transform: translateY(0);
+    /* Durasinya disamakan dengan panel (0.4s) tanpa waktu jeda/tunggu */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+/* 3. Mencegah error hover saat animasi berlangsung */
+.collapsing .glass-card:hover {
+    transform: translateY(15px); 
+    box-shadow: none;
+}
