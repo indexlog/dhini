@@ -65,10 +65,10 @@ const portfolioData = {
     ],
     education: [
         {
-            degree: "TKK",
+            degree: "TK",
             school: "Islam Assa'adah",
             year: "2010 - 2011",
-            desc: "Taman kanak-kanak islam terpadu, Mendapatkan IQ tertinggi."
+            desc: "Taman kanak-kanak islam terpadu."
         },
         {
             degree: "Sekolah Dasar",
